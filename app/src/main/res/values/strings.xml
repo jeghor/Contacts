@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Contacts</string>
+    <string name="no_contacts">No contacts</string>
+    <string name="search">Search contacts</string>
+    <string name="adding_contacts">adding contacts</string>
+    <string name="contact_btn">Name</string>
+    <string name="number">+375(29)-xx-xx-xxx</string>
+    <string name="phone_btn">phone btn image</string>
+    <string name="avatar_btn">avatar btn image</string>
+    <string name="button">button</string>
+    <string name="add_toolbar">Add contact</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone number</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="h1_dialog">Do you really want to delete the contact?</string>
+    <string name="h2_dialog">The contact will be removed and you will not be able te restore it</string>
+    <string name="ok">ok</string>
+    <string name="cancel">cancel</string>
+</resources>
