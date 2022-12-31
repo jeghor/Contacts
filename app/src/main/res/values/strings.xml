@@ -17,4 +17,7 @@
     <string name="ok">ok</string>
     <string name="cancel">cancel</string>
     <string name="icon_description">account_icon</string>
+    <string name="phone_radio_btn">Phone</string>
+    <string name="email_radio_btn">Email</string>
+
 </resources>
