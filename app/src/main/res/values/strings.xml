@@ -16,4 +16,5 @@
     <string name="h2_dialog">The contact will be removed and you will not be able te restore it</string>
     <string name="ok">ok</string>
     <string name="cancel">cancel</string>
+    <string name="icon_description">account_icon</string>
 </resources>

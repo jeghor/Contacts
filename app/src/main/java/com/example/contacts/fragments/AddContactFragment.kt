@@ -6,10 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.contacts.databinding.FragmentAddContactBinding
-import android.widget.Toast
+import com.example.contacts.App
 
 class AddContactFragment : Fragment() {
     private lateinit var binding: FragmentAddContactBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,26 +27,16 @@ class AddContactFragment : Fragment() {
         requireActivity().onBackPressed()
     }
 
+
     private fun addContact(){
-        val bool = checkField()
+        val bool = App.entryFieldService.checkField(
+            requireActivity(),binding.editTextTextPersonName,binding.editTextPhone
+        )
         if (bool){
-            ContactsFragment.setName(binding.editTextTextPersonName.text.toString())
-            ContactsFragment.setPhone(binding.editTextPhone.text.toString())
+            val name = binding.editTextTextPersonName.text.toString()
+            val phone = binding.editTextPhone.text.toString()
+            App.accountService.addAccount(name,phone)
             goBack()
         }
-    }
-
-    private fun checkField(): Boolean{
-        var field = false
-        if ("${binding.editTextPhone.text}"!= ""&& "${binding.editTextTextPersonName.text}"!= ""){
-            field = true
-        } else if ("${binding.editTextPhone.text}"== ""&& "${binding.editTextTextPersonName.text}"== ""){
-            Toast.makeText(activity,"Please, enter name and phone number",Toast.LENGTH_SHORT).show()
-        } else if ("${binding.editTextPhone.text}"== ""){
-            Toast.makeText(activity,"Please, enter phone number",Toast.LENGTH_SHORT).show()
-        } else if ("${binding.editTextTextPersonName.text}"== ""){
-            Toast.makeText(activity,"Please, enter name",Toast.LENGTH_SHORT).show()
-        }
-        return field
     }
 }
