@@ -1,15 +1,11 @@
 package com.example.contacts.fragments
 
-import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.DialogFragment
 import com.example.contacts.App
-import com.example.contacts.MainActivity
 import com.example.contacts.databinding.FragmentPopUpBinding
 import com.example.contacts.models.Account
 
@@ -18,7 +14,6 @@ class PopUpFragment : DialogFragment() {
     private lateinit var binding: FragmentPopUpBinding
     private lateinit var accId:String
 
-    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

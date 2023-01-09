@@ -1,12 +1,14 @@
 package com.example.contacts.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.contacts.databinding.FragmentAddContactBinding
+import androidx.fragment.app.Fragment
 import com.example.contacts.App
+import com.example.contacts.R
+import com.example.contacts.databinding.FragmentAddContactBinding
+
 
 class AddContactFragment : Fragment() {
     private lateinit var binding: FragmentAddContactBinding
@@ -19,6 +21,22 @@ class AddContactFragment : Fragment() {
 
         binding.backArrow.setOnClickListener{goBack()}
         binding.doneContact.setOnClickListener{addContact()}
+
+        binding.radioGroup.setOnCheckedChangeListener { _, checkedId ->
+            with(binding){
+                when (checkedId) {
+                    PhoneRadioButton.id -> {
+                        contactPropertyText.setText(R.string.phone_number)
+                        editTextPhone.setHint(R.string.number)
+                    }
+                    else -> {
+                        contactPropertyText.setText(R.string.email)
+                        editTextPhone.setHint(R.string.email_example)
+                    }
+                }
+            }
+
+        }
 
         return binding.root
     }

@@ -33,7 +33,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:contentDescription="@string/icon_description"
-                app:srcCompat="@drawable/ic_outline_account_circle_24" />
+                app:srcCompat="@drawable/email_acc_icon" />
 
             <TextView
                 android:id="@+id/name_textView"
@@ -50,20 +50,20 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/phone_textView"
+                android:id="@+id/email_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:elevation="2dp"
                 android:fontFamily="@font/roboto"
-                android:text="@string/number"
+                android:text="@string/email_example"
                 android:textColor="#757575"
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="@+id/name_textView"
                 app:layout_constraintTop_toBottomOf="@+id/name_textView" />
 
             <ImageButton
-                android:id="@+id/phone_button"
+                android:id="@+id/email_letter_button"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="16dp"
@@ -72,7 +72,7 @@
                 android:background="?android:selectableItemBackgroundBorderless"
                 android:contentDescription="@string/phone_btn"
                 android:minHeight="48dp"
-                android:src="@drawable/ic_sharp_local_phone_24"
+                android:src="@drawable/ic_outline_email_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

@@ -33,7 +33,7 @@
             android:src="@drawable/ic_baseline_keyboard_backspace_24"
             app:layout_constraintBottom_toBottomOf="@+id/toolbar"
             app:layout_constraintStart_toStartOf="@+id/toolbar"
-            app:layout_constraintTop_toTopOf="@+id/toolbar" />
+            app:layout_constraintTop_toTopOf="@+id/toolbar"/>
 
         <ImageButton
             android:id="@+id/done_contact"
@@ -76,7 +76,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/contact_property_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -99,31 +99,36 @@
             android:backgroundTint="@color/hints"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            app:layout_constraintTop_toBottomOf="@+id/contact_property_text" />
 
-        <!--<RadioGroup
+        <RadioGroup
+            android:id="@+id/radio_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
+            android:checkedButton="@id/Phone_radioButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
-            android:backgroundTint="@color/floating_btn">
+            >
 
             <RadioButton
                 android:id="@+id/Phone_radioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/phone_radio_btn"
-                />
+                android:buttonTint="@color/floating_btn"
+                tools:ignore="UsingOnClickInXml" />
 
             <RadioButton
                 android:id="@+id/Email_radioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/email_radio_btn" />
+                android:text="@string/email_radio_btn"
+                tools:ignore="UsingOnClickInXml"
+                android:buttonTint="@color/floating_btn" />
 
-        </RadioGroup>-->
+        </RadioGroup>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
