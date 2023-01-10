@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.contacts.App
+import com.example.contacts.R
 import com.example.contacts.databinding.FragmentContactInfoBinding
 
 class ContactInfoFragment : Fragment() {
@@ -32,6 +33,10 @@ class ContactInfoFragment : Fragment() {
                 binding.toolbar.title = it.name
                 binding.editTextTextPersonName.setText(it.name)
                 binding.editTextPhone.setText(it.phone)
+                if (it.account_type==1){
+                    binding.textView3.setText(R.string.email)
+                    binding.editTextPhone.setText(it.email)
+                }
             }
         }
 

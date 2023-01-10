@@ -1,6 +1,7 @@
 package com.example.contacts.fragments
 
 import android.os.Bundle
+import android.text.InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import com.example.contacts.databinding.FragmentAddContactBinding
 
 class AddContactFragment : Fragment() {
     private lateinit var binding: FragmentAddContactBinding
+    private var viewType = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,7 +33,9 @@ class AddContactFragment : Fragment() {
                     }
                     else -> {
                         contactPropertyText.setText(R.string.email)
+                        editTextPhone.inputType = TYPE_TEXT_VARIATION_EMAIL_ADDRESS
                         editTextPhone.setHint(R.string.email_example)
+                        viewType = 1
                     }
                 }
             }
@@ -52,8 +56,13 @@ class AddContactFragment : Fragment() {
         )
         if (bool){
             val name = binding.editTextTextPersonName.text.toString()
-            val phone = binding.editTextPhone.text.toString()
-            App.accountService.addAccount(name,phone)
+            if (viewType == 0){
+                val phone = binding.editTextPhone.text.toString()
+                App.accountService.addAccount(name,phone,"none",viewType)
+            } else{
+                val email = binding.editTextPhone.text.toString()
+                App.accountService.addAccount(name,"none",email,viewType)
+            }
             goBack()
         }
     }

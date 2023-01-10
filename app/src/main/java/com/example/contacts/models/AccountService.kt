@@ -9,9 +9,9 @@ class AccountService {
 
     private val listeners = mutableSetOf<AccountListener>()
 
-    fun addAccount(name_ :String, phone_ : String ){
+    fun addAccount(name_ :String, phone_ : String, email_ :String, type_ :Int ){
         val newIdAccount = Random.nextInt(1000)
-        val newAccount = Account(newIdAccount.toString(),name_,phone_)
+        val newAccount = Account(newIdAccount.toString(),name_,phone_,email_,type_)
         accounts.add(newAccount)
         notifyChanges()
     }
