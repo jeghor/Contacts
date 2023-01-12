@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.contacts.App
 import com.example.contacts.R
 import com.example.contacts.databinding.FragmentContactInfoBinding
@@ -44,15 +46,18 @@ class ContactInfoFragment : Fragment() {
     }
 
     private fun deleteContact(){
-        val puf = PopUpFragment()
+        findNavController().navigate(R.id.action_contactInfoFragment_to_popUpFragment2,
+                bundleOf("id" to accId)
+            )
+        /*val puf = PopUpFragment()
         val bundle = Bundle()
         bundle.putString("id",accId)
         puf.arguments = bundle
-        puf.show((activity as AppCompatActivity).supportFragmentManager,"showPopUp") // show FragmentDialog
+        puf.show((activity as AppCompatActivity).supportFragmentManager,"showPopUp") // show FragmentDialog*/
     }
 
     private fun goBack(){
-        requireActivity().onBackPressed()
+        findNavController().popBackStack()
     }
 
     private fun changeContact(){

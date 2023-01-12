@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.contacts.App
 import com.example.contacts.R
 import com.example.contacts.databinding.FragmentMainBinding
@@ -25,12 +26,10 @@ class MainFragment : Fragment() {
         }
 
         binding.addContact.setOnClickListener {
-            parentFragmentManager
-                .beginTransaction()
-                .addToBackStack(null)
-                .replace(R.id.fragmentContainer,AddContactFragment())
-                .commit()
+            findNavController().navigate(R.id.action_mainFragment_to_addContactFragment)
         }
         return binding.root
     }
+
+
 }

@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.contacts.AccountsAdapter
 import com.example.contacts.App
@@ -29,15 +31,9 @@ class ContactsFragment : Fragment() {
         binding = FragmentRecycleBinding.inflate(layoutInflater)
         adapter = AccountsAdapter(object : AccountsAdapter.Listener{
             override fun onContact(account: Account) {
-                val cif = ContactInfoFragment()
-                val bundle = Bundle()
-                bundle.putString("id",account.id)
-                cif.arguments = bundle
-                parentFragmentManager
-                    .beginTransaction()
-                    .addToBackStack(null)
-                    .replace(R.id.fragmentContainer,cif)
-                    .commit()
+                findNavController().navigate(R.id.action_mainFragment_to_contactInfoFragment,
+                    bundleOf("id" to account.id)
+                )
             }
 
             override fun onCallContact(account: Account) {

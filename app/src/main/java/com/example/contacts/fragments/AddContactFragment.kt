@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.contacts.App
 import com.example.contacts.R
 import com.example.contacts.databinding.FragmentAddContactBinding
@@ -46,7 +47,7 @@ class AddContactFragment : Fragment() {
     }
 
     private fun goBack(){
-        requireActivity().onBackPressed()
+        findNavController().popBackStack()
     }
 
 
